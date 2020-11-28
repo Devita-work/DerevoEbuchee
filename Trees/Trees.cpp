@@ -43,7 +43,7 @@ void main()
 	cout << "Количество вершин на нечётных уровнях = " << countOddLevelNodes(root, 0) << endl;
 
 	printTree(root->left);
-	//cout << endl << oldSumm(root) << endl;
+	//cout << endl << oldSumm(root) << endl;dsd
 
 	system("pause");
 	return;
