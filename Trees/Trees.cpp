@@ -22,8 +22,6 @@ struct TreeNode
 // Прототипы функций
 TreeNode* makeTree(int level, int b);
 void printTree(TreeNode*& root, const int level = 0);
-int sumTree(TreeNode* root);
-int countOddLevelNodes(TreeNode*& root, const int level = 0);
 
 
 void main()
