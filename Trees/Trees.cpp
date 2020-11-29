@@ -82,12 +82,4 @@ void printTree(TreeNode*& root, const int level)
 	return;
 }
 
-// Функция возвращает сумму вершин бинарного дерева
-int sumTree(TreeNode* root)
-{
-	if (root)
-		return root->info + sumTree(root->left) + sumTree(root->right);
-	else
-		return 0;
-}
 
