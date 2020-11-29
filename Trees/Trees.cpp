@@ -1,11 +1,9 @@
 ﻿/*
-Последовательно вводятся вершины бинарного дерева.
-По построенному дереву найти
-1) сумму вершин дерева
-2) количество вершин на нечетных уровнях
+По входной последовательности целых чисел построить бинарное дерево. Найти для
+каждой вершины дерева сумму её предков.
 
 Автор : Метелев В.Р.
-Дата  : 16.10.2020
+Дата  : 29.11.2020
 */
 
 #include <iostream>
@@ -17,7 +15,7 @@ using namespace std;
 struct TreeNode
 {
 	int info;
-	int sum; //добавил сумму, как характеристику вершины
+	int sum; 
 	TreeNode* left, * right, *back;
 };
 
@@ -26,7 +24,7 @@ TreeNode* makeTree(int level, int b);
 void printTree(TreeNode*& root, const int level = 0);
 int sumTree(TreeNode* root);
 int countOddLevelNodes(TreeNode*& root, const int level = 0);
- // объявление функции поиска суммы предков (она работает, но пока только для 1 элемента :DDD)
+
 
 void main()
 {
@@ -39,9 +37,6 @@ void main()
 
 	cout << "Введенное дерево:" << endl;
 	printTree(root);
-
-	printTree(root->left);
-	//cout << endl << oldSumm(root) << endl;dsd
 
 	system("pause");
 	return;
@@ -59,8 +54,7 @@ TreeNode* makeTree(int level, int b)
 		
 		cout << setw(4 * level) << "" << "Введите значение вершины:";
 		cin >> p->info;
-		b = b + p->info; // на мой взгляд, можно считать сумму тут, но выводит кривые регистры, 
-		// не аккуратная работа с памятью, скорее всего надо занулить p->sum, что я и сделал в 62 строчке, но получается каждый раз сумма обнуляться будет, тоже калич крч
+		b = b + p->info; 
 		p->sum = b;
 		cout << setw(4 * level) << "" << "Левое поддерево вершины " << p->info << endl;
 		p->left = makeTree(level + 1,b);
